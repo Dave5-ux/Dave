@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Streamify - Watch and Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .video-card {
+      background-color: #2a2a2a;
+      padding: 10px;
+      width: 300px;
+      border-radius: 10px;
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    form {
+      margin-top: 40px;
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #ff4747;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Streamify</h1>
+    <p>Watch and Upload Your Favorite Moments</p>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#upload">Upload</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="container">
+    <div class="video-card">
+      <h3>Sample Video 1</h3>
+      <video controls>
+        <source src="sample1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="video-card">
+      <h3>Sample Video 2</h3>
+      <video controls>
+        <source src="sample2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Add more videos as needed -->
+  </section>
+
+  <section id="upload">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <h2>Upload Your Content</h2>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="file">Choose a video or image:</label>
+      <input type="file" id="file" name="file" accept="video/*,image/*" required>
+
+      <button type="submit">Upload</button>
+    </form>
+  </section>
+
+  <footer style="text-align:center; padding: 20px; background-color: #1e1e1e; margin-top: 40px;">
+    <p>&copy; 2025 Streamify. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
